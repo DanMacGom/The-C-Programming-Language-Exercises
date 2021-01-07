@@ -10,7 +10,6 @@
 
 void detab(char tabbed[], char detabbed[]);
 int obtainline(char s[], int lim);
-int length(char s[]);
 
 void detab(char tabbed[], char detabbed[]) {
   int i, j, nextTabStop;
@@ -21,7 +20,7 @@ void detab(char tabbed[], char detabbed[]) {
       nextTabStop = BLANKSPERTAB - (j % BLANKSPERTAB);
       printf("Blanks: %d\n", nextTabStop);
       while (nextTabStop-- > 0) {
-        // Use '-' easier to see than ' '
+        // Use '-' easier to see than ' '.
         detabbed[j++] = '-';
       }
     } else {
@@ -29,10 +28,6 @@ void detab(char tabbed[], char detabbed[]) {
       detabbed[j++] = tabbed[i];
     }
   }
-  //
-  // if (tabbed[i] == '\n') {
-  //   detabbed[j++] = tabbed[i];
-  // }
 
   detabbed[j] = '\0';
 }
@@ -52,17 +47,6 @@ int obtainline(char s[], int lim) {
   return i;
 }
 
-int length(char s[]) {
-  int i;
-
-  i = 0;
-  while (s[i] != '\0') {
-    ++i;
-  }
-
-  return i;
-}
-
 int main() {
   int len;
 
@@ -74,3 +58,6 @@ int main() {
     printf("%s", detabbed);
   }
 }
+
+// n should be a symbolic parameter (#define) because that value should be cons-
+// tant throughout the program.
