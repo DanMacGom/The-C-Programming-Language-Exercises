@@ -1,3 +1,10 @@
+/*
+ * Exercise 1-20.
+ * Write a program detab that replaces tabs in the input with the proper number of blanks
+ * to space to the next tab stop. Assume a fixed set of tab stops, say every n columns.
+ * Should n be a variable or a symbolic parameter?
+*/
+
 // IMPORTANT: the tabstops are defined so that when you press tab you add up to
 // the default multiple of the default value (8).
 // So input line of aa + '\t' -> '\t' = 6 * ' '.

@@ -1,3 +1,9 @@
+/* 
+ * Exercise 1-16.
+ * Revise the main routine of the longest-line program so it will correctly print
+ * the length of arbitrarily long input lines, and as much as possible of the text.
+*/
+
 // #############################################################################
 // IMPORTANT: getline() is a standard library function, changed the name of the
 // function to obtainline().
@@ -7,7 +13,7 @@
 #define MAXLINE 5
 // IMPORTANT: lower this constant to test (1000 chars is too much to input in
 // console). If your string is longer than MAXLINE then this program should
-// print your string up to MAXLINE-1 index since you have an extra "\n" from
+// print your string up to MAXLINE-1 index since you have an extra '\n' from
 // entering the input.
 
 #include <stdio.h>

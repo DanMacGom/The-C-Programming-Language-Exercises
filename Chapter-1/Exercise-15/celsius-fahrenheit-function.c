@@ -1,3 +1,9 @@
+/*
+ * Exercise 1-15.
+ * Rewrite the temperature conversion program of Section 1.2 to use a function for conver-
+ * sion.
+*/
+
 #include <stdio.h>
 
 float fahrCelsius(int fahr);
