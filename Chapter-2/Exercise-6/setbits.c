@@ -55,4 +55,6 @@ int main(void) {
 	int p = 4, n = 3;
 	printf("x="BYT_BIN_PAT"\ny="BYT_BIN_PAT"\n", BYT_BIN(x), BYT_BIN(y));
 	printf("Result="BYT_BIN_PAT"\n", BYT_BIN(setbits(x, p, n, y)));	
+	
+	return 0;
 }
