@@ -1,34 +1,34 @@
-/* 
+/*
  * Exercise 1-8.
  * Write a program to count blanks, tabs, and newlines.
-*/
+ */
 
 #include <stdio.h>
 
 int main() {
-  int blanks = 0;
-  int tabs = 0;
-  int newlines = 0;
+    int blanks = 0;
+    int tabs = 0;
+    int newlines = 0;
 
-  char c;
+    char c;
 
-  while((c = getchar()) != EOF) {
-    if (c == ' ') {
-      ++blanks;
+    while ((c = getchar()) != EOF) {
+        if (c == ' ') {
+            ++blanks;
+        }
+
+        if (c == '\t') {
+            ++tabs;
+        }
+
+        if (c == '\n') {
+            ++newlines;
+        }
     }
 
-    if (c == '\t'){
-      ++tabs;
-    }
-
-    if (c == '\n') {
-      ++newlines;
-    }
-  }
-
-  printf("Number of blanks: %d\n", blanks);
-  printf("Number of tabs: %d\n", tabs);
-  printf("Number of newlines: %d\n", newlines);
+    printf("Number of blanks: %d\n", blanks);
+    printf("Number of tabs: %d\n", tabs);
+    printf("Number of newlines: %d\n", newlines);
 }
 
 // To test this code the user could three one-character words and count that

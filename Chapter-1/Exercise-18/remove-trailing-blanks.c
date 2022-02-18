@@ -1,8 +1,8 @@
 /*
  * Exercise 1-18.
- * Write a program to remove trailing blanks and tabs from each line of input, and to
- * delete entirely blank lines.
-*/
+ * Write a program to remove trailing blanks and tabs from each line of input,
+ * and to delete entirely blank lines.
+ */
 
 #include <stdio.h>
 
@@ -11,34 +11,34 @@
 int obtainline(char line[], int maxline);
 
 int obtainline(char s[], int lim) {
-  int c, i;
+    int c, i;
 
-  for (i = 0; i < lim - 1 && (c = getchar()) != EOF && c != '\n'; ++i) {
-    s[i] = c;
-  }
-  if (c == '\n') {
-    s[i] = c;
-    ++i;
-  }
-  s[i] = '\0';
+    for (i = 0; i < lim - 1 && (c = getchar()) != EOF && c != '\n'; ++i) {
+        s[i] = c;
+    }
+    if (c == '\n') {
+        s[i] = c;
+        ++i;
+    }
+    s[i] = '\0';
 
-  return i;
+    return i;
 }
 
 int main() {
-  int len;
-  int j;
+    int len;
+    int j;
 
-  char line[MAXLINE];
+    char line[MAXLINE];
 
-  while ((len = obtainline(line, MAXLINE)) > 0) {
-    j = len - 2;
-    while (line[j] == '\t' || line[j] == ' ') {
-      --j;
+    while ((len = obtainline(line, MAXLINE)) > 0) {
+        j = len - 2;
+        while (line[j] == '\t' || line[j] == ' ') {
+            --j;
+        }
+
+        line[j + 1] = '\n';
+        line[j + 2] = '\0';
+        printf("%s", line);
     }
-
-    line[j + 1] = '\n';
-    line[j + 2] = '\0';
-    printf("%s", line);
-  }
 }
