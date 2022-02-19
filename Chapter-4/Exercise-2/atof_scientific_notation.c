@@ -12,20 +12,20 @@
 double atof(char s[]);
 
 int main(void) {
-    char string[] = "1421.231e6";
+    char string[] = "123.45e-6";
     printf("%f", atof(string));
 }
 
 double atof(char s[]) {
-    double val, power;
+    double val, power, exponent;
     int i = 0, sign;
+    int power_sign = 1;
 
     while (isspace(s[i])) {
         i++;
     }
 
     sign = (s[i] == '-') ? -1 : 1;
-    printf("sign=%d\n", sign);
 
     if (s[i] == '+' || s[i] == '-') {
         i++;
@@ -33,7 +33,6 @@ double atof(char s[]) {
 
     for (val = 0.0; isdigit(s[i]); i++) {
         val = 10.0 * val + (s[i] - '0');
-        printf("val=%f\n", val);
     }
 
     if (s[i] == '.') {
@@ -42,9 +41,23 @@ double atof(char s[]) {
 
     for (power = 1.0; isdigit(s[i]); i++) {
         val = 10.0 * val + (s[i] - '0');
-        printf("val=%f, ", val);
         power *= 10.0;
-        printf("power=%f\n", power);
+    }
+
+    if (s[i] == 'e' || s[i] == 'E') {
+        i++;
+    }
+
+    if (s[i++] == '-') {
+        power_sign = -1;
+    }
+
+    for (; isdigit(s[i]); i++) {
+        exponent = 10.0 * exponent + (s[i] - '0');
+    }
+
+    for (int j = 1; j <= exponent; j++) {
+        power *= power_sign == -1 ? (1 / 10.0) : 10.0;
     }
 
     return sign * val / power;
