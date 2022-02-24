@@ -23,7 +23,6 @@ void squeeze(char s1[], char s2[]) {
         // When s1[i] == s2[j] then s2[j] is never '\0' so k does not increase
         // in this case.
         if (s2[j] == '\0') {
-            printf("s1[k=%d] = '%c'\n", k, s1[i]);
             s1[k++] = s1[i];
         }
     }

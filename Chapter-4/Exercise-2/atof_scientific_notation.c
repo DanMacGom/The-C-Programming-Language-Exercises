@@ -13,7 +13,7 @@ double atof(char s[]);
 
 int main(void) {
     char string[] = "123.45e-3";
-    printf("%f", atof(string));
+    printf("%f\n", atof(string));
 }
 
 double atof(char s[]) {

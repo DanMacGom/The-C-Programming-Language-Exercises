@@ -15,7 +15,7 @@ int main(void) {
 
     int index = strrindex(s, t);
 
-    printf("First letter is %c at index %d.", s[index], index);
+    printf("First letter is %c at index %d.\n", s[index], index);
 
     return 0;
 }

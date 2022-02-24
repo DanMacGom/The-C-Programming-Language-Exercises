@@ -64,7 +64,7 @@ int main(void) {
     char s2[MAXLINE];
 
     // Test overflow.
-    itoa(INT_MIN, s);
+    itoa(INT_MIN, s1);
     printf("%d => %s\n", INT_MIN, s1);
 
     itoa(INT_MAX, s2);
