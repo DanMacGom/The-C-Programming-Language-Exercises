@@ -12,14 +12,15 @@
 double atof(char s[]);
 
 int main(void) {
-    char string[] = "123.45e-6";
+    char string[] = "123.45e-0";
     printf("%f", atof(string));
 }
 
 double atof(char s[]) {
     double val, power, exponent;
-    int i = 0, sign;
-    int power_sign = 1;
+    int i = 0;
+    int sign = 1;
+    int exponent_sign = 1;
 
     while (isspace(s[i])) {
         i++;
@@ -49,15 +50,15 @@ double atof(char s[]) {
     }
 
     if (s[i++] == '-') {
-        power_sign = -1;
+        exponent_sign = -1;
     }
 
     for (; isdigit(s[i]); i++) {
         exponent = 10.0 * exponent + (s[i] - '0');
     }
 
-    for (int j = 1; j <= exponent; j++) {
-        power *= power_sign == -1 ? (1 / 10.0) : 10.0;
+    for (int j = 1; j <= (int)exponent; j++) {
+        power *= exponent_sign == -1 ? 10.0 : (1 / 10.0);
     }
 
     return sign * val / power;
