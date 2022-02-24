@@ -26,9 +26,8 @@ void fold(char line[], char fold_line[]) {
         } else {
             inBlank = 0;
         }
-        if (i + 1) % FOLDCOLS == 0) {
-
-    }
+        if ((i + 1) % FOLDCOLS == 0) {
+        }
     }
 }
 

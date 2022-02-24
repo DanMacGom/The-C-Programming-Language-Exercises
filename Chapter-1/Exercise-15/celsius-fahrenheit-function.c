@@ -1,7 +1,7 @@
 /*
  * Exercise 1-15.
  * Rewrite the temperature conversion program of Section 1.2 to use a function
- * for conver- sion.
+ * for conversion.
  */
 
 #include <stdio.h>
@@ -20,7 +20,7 @@ int main() {
 
     fahr = lower;
 
-    printf("  Fº    Cº\n");
+    printf("  F    C\n");
     printf("-----------\n");
     while (fahr <= upper) {
         celsius = fahrCelsius(fahr);
